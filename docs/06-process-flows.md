@@ -78,3 +78,4 @@ sequenceDiagram
   L-->>L: Mark return refunded/archived
   L->>C: Return status/refund data available
   C->>NS: Create Credit Memo (financial record)
+```

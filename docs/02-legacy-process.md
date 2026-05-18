@@ -30,3 +30,4 @@ flowchart TD
   F --> G[Create Credit Memo in NetSuite]
   G --> H[Customer Service batches refunds<br/>and processes refunds manually]
   H --> I[Customer receives refund]
+```

@@ -22,7 +22,7 @@
 
 ```mermaid
 flowchart TD
-  A[Customer receives order<br/>with prepaid return-label] --> B[Customer decides to return product, uses prepaid -return-label to ship product]
+  A[Customer receives order<br/>with prepaid return-label] --> B[Customer decides to return product, uses prepaid return-label<br/>to ship product]
   B --> C[Return arrives at SCARPA]
   C --> D[Product Services inspects item]
   D --> E[Create Return Authorization in NetSuite]

@@ -12,7 +12,22 @@ This repository documents the implementation of the **Loop Returns** platform at
 
 ---
 
-## Problem
+## Table of Contents
+- [Business Case](docs/01-business-case.md)
+- [Legacy Returns Process](docs/02-legacy-process.md)
+- [Solution Overview](docs/03-solution-overview.md)
+- [Integration Architecture](docs/04-integration-architecture.md)
+- [Project Phases](docs/05-project-phases.md)
+- [Process Flows](docs/06-process-flows.md)
+- [Testing & Validation](docs/07-testing-validation.md)
+- [Change Management](docs/08-change-management.md)
+- [Risks & Decisions](docs/09-risks-decisions.md)
+- [Outcomes](docs/10-outcomes.md)
+- [Lessons Learned](docs/11-lessons-learned.md)
+
+---
+
+## 📉 Problem
 Before Loop, returns were handled via a **paper form and prepaid label placed inside each outbound order**, with heavy manual processing across teams. The process had:
 
 - Low visibility (returns “appeared” only after a customer asked about a refund)
@@ -22,7 +37,7 @@ Before Loop, returns were handled via a **paper form and prepaid label placed in
 
 ---
 
-## Goals
+## 🎯 Goals
 1. **Create end-to-end return visibility** (initiated → in transit → received → refunded → financially recorded)
 2. **Reduce manual work + operational risk**
 3. **Preserve operational control** at the point of physical receiving/inspection
@@ -30,7 +45,7 @@ Before Loop, returns were handled via a **paper form and prepaid label placed in
 
 ---
 
-## Solution Overview
+## 🛠️ Solution Overview
 The implementation had two primary phases:
 
 ### Phase 1 — Portal + Admin (Frontend + Operational Enablement)
@@ -49,7 +64,7 @@ Configure the subset of Celigo flows required to automate:
 
 ---
 
-## Key Design Choice: Warehouse-Controlled Receiving
+## 🔑 Key Design Choice: Warehouse-Controlled Receiving
 Loop’s “out-of-the-box” intended behavior can auto-create item receipts and push refunds quickly. SCARPA customized the workflow to:
 
 - Keep **warehouse** as the source of truth for “received + inspected”
@@ -59,7 +74,7 @@ This preserved operational control while still enabling automation + speed.
 
 ---
 
-## Diagrams
+## 📊 Diagrams
 - [Legacy process](docs/02-legacy-process.md#legacy-flow-diagram)
 - [SCARPA Loop workflow](docs/06-process-flows.md#scarpa-loop-workflow-diagram)
 - [Data sync architecture](docs/04-integration-architecture.md#architecture-diagram)
@@ -67,7 +82,7 @@ This preserved operational control while still enabling automation + speed.
 
 ---
 
-## Outcomes
+## 📈 Outcomes
 - Replaced an opaque, paper-based returns motion with a structured lifecycle
 - Reduced manual processing time and error probability
 - Increased transparency for Customer Service, Warehouse, Finance, and customers
@@ -75,18 +90,3 @@ This preserved operational control while still enabling automation + speed.
 - **Reduced operational load on Product Services enough that, during Spring seasonal turnover, SCARPA was able to reduce the number of seats in the department, resulting in additional cost savings**
 
 See: [Outcomes](docs/10-outcomes.md)
-
----
-
-## Table of Contents
-- [Business Case](docs/01-business-case.md)
-- [Legacy Returns Process](docs/02-legacy-process.md)
-- [Solution Overview](docs/03-solution-overview.md)
-- [Integration Architecture](docs/04-integration-architecture.md)
-- [Project Phases](docs/05-project-phases.md)
-- [Process Flows](docs/06-process-flows.md)
-- [Testing & Validation](docs/07-testing-validation.md)
-- [Change Management](docs/08-change-management.md)
-- [Risks & Decisions](docs/09-risks-decisions.md)
-- [Outcomes](docs/10-outcomes.md)
-- [Lessons Learned](docs/11-lessons-learned.md)
